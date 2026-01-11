@@ -46,6 +46,9 @@ This is a [Link to the front-end application](http://shaher1327865590049.s3.us-e
 
 ![CircleCi pipeline](./docs/screenshots/CircleCi.jpg)
 
+![CircleCi build step](./docs/screenshots/CircleCi-build.jpg)
+![CircleCi deploy step](./docs/screenshots/CircleCi-deploy.jpg)
+
 ## Architecture
 
 The following diagram illustrates:
