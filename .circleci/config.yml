@@ -56,6 +56,19 @@ jobs:
       - aws-cli/setup
       - checkout
       - run:
+          name: Set Environment Variables on Elastic Beanstalk
+          command: |
+            cd udagram/udagram-api
+            eb use udagram-api-dev
+            eb setenv POSTGRES_USERNAME=$POSTGRES_USERNAME \
+                      POSTGRES_PASSWORD=$POSTGRES_PASSWORD \
+                      POSTGRES_HOST=$POSTGRES_HOST \
+                      POSTGRES_DB=$POSTGRES_DB \
+                      AWS_BUCKET=$AWS_BUCKET \
+                      AWS_REGION=$AWS_REGION \
+                      JWT_SECRET=$JWT_SECRET \
+                      URL=$URL
+      - run:
           name: Deploy App
           # TODO: Install, build, deploy in both apps
           command: |

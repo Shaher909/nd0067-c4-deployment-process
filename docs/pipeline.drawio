@@ -1,0 +1,96 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.3.0">
+  <diagram name="CI/CD Pipeline" id="pipeline">
+    <mxGraphModel dx="1527" dy="878" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1" value="CircleCI Pipeline - Udagram Deployment" vertex="1">
+          <mxGeometry height="40" width="400" x="500" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="git-push" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1" value="Developer pushes code to GitHub" vertex="1">
+          <mxGeometry height="60" width="200" x="40" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="trigger" parent="1" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="Webhook Trigger" vertex="1">
+          <mxGeometry height="60" width="140" x="290" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="build-container" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Build Job" vertex="1">
+          <mxGeometry height="420" width="380" x="480" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="build-step1" parent="build-container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="1. Install Node.js 14.15" vertex="1">
+          <mxGeometry height="40" width="340" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="build-step2" parent="build-container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="2. Checkout Code" vertex="1">
+          <mxGeometry height="40" width="340" x="20" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="build-step3" parent="build-container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="3. npm run frontend:install&lt;br&gt;(Install Angular/Ionic dependencies)" vertex="1">
+          <mxGeometry height="50" width="340" x="20" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="build-step4" parent="build-container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="4. npm run api:install&lt;br&gt;(Install Node.js API dependencies)" vertex="1">
+          <mxGeometry height="50" width="340" x="20" y="215" as="geometry" />
+        </mxCell>
+        <mxCell id="build-success" parent="build-container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" value="✓ Build Success" vertex="1">
+          <mxGeometry height="40" width="340" x="20" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="approval" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1" value="Manual Approval Required" vertex="1">
+          <mxGeometry height="80" width="160" x="900" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="deploy-container" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="Deploy Job&amp;nbsp;" vertex="1">
+          <mxGeometry height="320" width="380" x="480" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="deploy-step1" parent="deploy-container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="1. Install Node.js, AWS CLI, EB CLI" vertex="1">
+          <mxGeometry height="40" width="340" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="deploy-step2" parent="deploy-container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="2. Checkout Code" vertex="1">
+          <mxGeometry height="40" width="340" x="20" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="deploy-step3" parent="deploy-container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" value="3. npm run deploy&lt;br&gt;(Build and Deploy both apps)" vertex="1">
+          <mxGeometry height="50" width="340" x="20" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="deploy-success" parent="deploy-container" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" value="✓ Deployment Complete" vertex="1">
+          <mxGeometry height="40" width="340" x="20" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="api-deploy" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="API Deployment&lt;br&gt;• npm install&lt;br&gt;• tsc compile&lt;br&gt;• eb deploy to EB" vertex="1">
+          <mxGeometry height="100" width="180" x="910" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="frontend-deploy" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Frontend Deployment&lt;br&gt;• npm install&lt;br&gt;• ng build&lt;br&gt;• aws s3 cp to S3" vertex="1">
+          <mxGeometry height="100" width="180" x="910" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f8cecc;strokeColor=#b85450;" value="S3 Bucket&lt;br&gt;Frontend Files" vertex="1">
+          <mxGeometry height="100" width="120" x="1150" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="eb" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f8cecc;strokeColor=#b85450;" value="Elastic Beanstalk&lt;br&gt;API Running" vertex="1">
+          <mxGeometry height="100" width="120" x="1150" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow1" edge="1" parent="1" source="git-push" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;" target="trigger" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow2" edge="1" parent="1" source="trigger" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;" target="build-container" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow3" edge="1" parent="1" source="build-container" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;" target="approval" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="910" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow6" edge="1" parent="1" source="approval" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;" target="deploy-container" value="Approved">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow7" edge="1" parent="1" source="deploy-container" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;" target="api-deploy" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow8" edge="1" parent="1" source="deploy-container" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;" target="frontend-deploy" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow9" edge="1" parent="1" source="api-deploy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;" target="eb" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow10" edge="1" parent="1" source="frontend-deploy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;" target="s3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="env-note" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;align=left;" value="Required Environment Variables:&lt;br&gt;• AWS_ACCESS_KEY_ID&lt;br&gt;• AWS_SECRET_ACCESS_KEY&lt;br&gt;• AWS_DEFAULT_REGION" vertex="1">
+          <mxGeometry height="80" width="280" x="40" y="540" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -14,7 +14,7 @@ This project contains a full-stack web appliation:
   - ElasticBeanstalk for hosting the backend api
 - CircleCi is used as CI/CD tool for automating tests and deployments
 
-This is a [Link to the front-end application](http://shaher1327865590049.s3.us-east-1.amazonaws.com/index.html)
+This is a [Link to the front-end application](http://shaher1327865590049.s3-website-us-east-1.amazonaws.com)
 
 ## Screenshots
 
@@ -42,7 +42,11 @@ This is a [Link to the front-end application](http://shaher1327865590049.s3.us-e
 
    ![S3 Dashboard](./docs/screenshots/S3.jpg)
 
-7. The deployment pipeline on CircleCi
+7. Environment vars on CircleCi
+
+   ![CircleCi env vars](./docs/screenshots/env-vars.jpg)
+
+8. The deployment pipeline on CircleCi
 
 ![CircleCi pipeline](./docs/screenshots/CircleCi.jpg)
 
@@ -54,6 +58,8 @@ This is a [Link to the front-end application](http://shaher1327865590049.s3.us-e
 The following diagram illustrates:
 
 - An architecture diagram showing a high-level overview of the infrastructure
-- the overview of the pipeline
 
 ![The over all architecture](./docs/architecture.jpg)
+
+- Pipeline diagram
+  ![Pipeline diagram](./docs/pipeline.jpg)
