@@ -32,7 +32,7 @@ This is a [Link to the front-end application](http://shaher1327865590049.s3.us-e
 
 4. The back-end API application hosted on ElasticBeanstalk
 
-   ![ElasticBeanstalk Dashboard](./docs/screenshots/EB-App.jpg
+   ![ElasticBeanstalk Dashboard](./docs/screenshots/EB-App.jpg)
 
 5. The RDS database instance hosting Postgres
 
@@ -40,7 +40,7 @@ This is a [Link to the front-end application](http://shaher1327865590049.s3.us-e
 
 6. The S3 bucket hosting the frontend static website and uploaded images
 
-   ![S3 Dashboard](./docs/screenshots/S3.jpg
+   ![S3 Dashboard](./docs/screenshots/S3.jpg)
 
 7. The deployment pipeline on CircleCi
 

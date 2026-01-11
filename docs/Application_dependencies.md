@@ -8,6 +8,7 @@
 ## Backend (API) Dependencies
 
 ### Runtime Dependencies
+
 - **express**: Web framework for Node.js
 - **sequelize**: ORM for PostgreSQL database
 - **pg**: PostgreSQL client
@@ -19,19 +20,22 @@
 - **dotenv**: Environment variable management
 
 ### Development Dependencies
+
 - **typescript**: TypeScript compiler
-- **@types/***: TypeScript type definitions
+- **@types/\***: TypeScript type definitions
 - **ts-node-dev**: Development server with hot reload
 
 ## Frontend Dependencies
 
 ### Runtime Dependencies
+
 - **@angular/core**: Angular framework (v8.2.14)
 - **@ionic/angular**: Ionic UI components (v4.1.0)
 - **rxjs**: Reactive programming library
 - **zone.js**: Angular change detection
 
 ### Development Dependencies
+
 - **@angular/cli**: Angular CLI for building
 - **@angular/compiler-cli**: Angular compiler
 - **typescript**: TypeScript compiler
