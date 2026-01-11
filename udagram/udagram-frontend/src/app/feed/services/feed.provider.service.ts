@@ -26,7 +26,7 @@ export class FeedProviderService {
       caption: caption,
       url: file.name,
     });
-    const feed = [res, ...this.currentFeed$.value];
+    const feed = [res].concat(this.currentFeed$.value);
     this.currentFeed$.next(feed);
     return res;
   }
